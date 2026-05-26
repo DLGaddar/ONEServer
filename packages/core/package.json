@@ -1,0 +1,20 @@
+{
+  "name": "@oneserver/core",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "ssh2": "^1.15.0",
+    "ws": "^8.18.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/ssh2": "^1.15.4",
+    "@types/ws": "^8.5.10",
+    "typescript": "^5.4.5"
+  }
+}

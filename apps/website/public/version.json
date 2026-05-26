@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "releaseDate": "2025-01-20",
+  "downloads": {
+    "windows": "https://github.com/kullaniciadi/oneserver/releases/download/v1.0.0/ONEServer-Setup-1.0.0.exe",
+    "linux": "https://github.com/kullaniciadi/oneserver/releases/download/v1.0.0/ONEServer-1.0.0.AppImage"
+  },
+  "changelog": [
+    "İlk kararlı sürüm yayınlandı",
+    "SSH key tabanlı güvenli bağlantı",
+    "Docker konteyner yönetimi",
+    "Gerçek zamanlı sistem izleme",
+    "Flutter mobil uygulama desteği",
+    "AES-256 şifreli mobil iletişim"
+  ]
+}

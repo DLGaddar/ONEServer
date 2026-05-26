@@ -1,0 +1,24 @@
+{
+  "name": "oneserver-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ONEServer Multi-platform Server Manager Monorepo",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:desktop": "npm run dev -w apps/desktop",
+    "build:desktop": "npm run build -w apps/desktop",
+    "build:core": "npm run build -w packages/core",
+    "build:relay": "npm run build -w apps/relay",
+    "build": "npm run build -w packages/core && npm run build -w apps/desktop && npm run build -w apps/relay",
+    "build:setup": "npm run build && npm run build:setup -w apps/desktop"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "ssh2": "^1.17.0"
+  }
+}

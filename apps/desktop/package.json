@@ -1,0 +1,65 @@
+{
+  "name": "@oneserver/desktop",
+  "version": "1.0.0",
+  "description": "ONEServer - Multi-platform Server Manager",
+  "author": "ONEServer Team",
+  "private": true,
+  "main": "./dist-electron/main/main.js",
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "tsc -p tsconfig.main.json && vite build",
+    "rebuild": "electron-rebuild -f -w better-sqlite3",
+    "build:setup": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "appId": "com.oneserver.app",
+    "productName": "ONEServer",
+    "directories": {
+      "output": "../../dist-release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../../packages/core/dist",
+        "to": "core/dist"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
+  },
+  "dependencies": {
+    "@oneserver/core": "*",
+    "better-sqlite3": "^11.0.0",
+    "compare-versions": "^6.1.1",
+    "electron-log": "^5.1.2",
+    "kysely": "^0.27.3",
+    "lucide-react": "^0.378.0",
+    "qrcode": "^1.5.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^4.0.4",
+    "@types/better-sqlite3": "^7.6.10",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "electron": "30.5.1",
+    "electron-builder": "^24.13.3",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11"
+  }
+}
